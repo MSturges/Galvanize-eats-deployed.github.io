@@ -1,0 +1,84 @@
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  padding: 0;
+  margin: 0px;
+  opacity: .80;
+}
+
+header h3 {
+}
+
+#jumbotron {
+  background-image: url("../../media/restaurant-hero-image.jpg");
+  height: 550px;
+  width: 100%;
+  text-align: center;
+  margin: 0px;
+  background-size: cover;
+}
+
+h1 {
+  margin-top: 0px;
+  padding-top: 240px;
+  color: rgb(255, 255, 255);
+  font-size: 72px;
+}
+
+#orderBtn {
+  background-color: rgb(111, 160, 114);
+  height: 70px;
+  width: 1050px;
+  font-size: 28px;
+  color: rgb(255, 255, 255);
+  margin-top: 65px;
+}
+
+article {
+  position: relative;
+  height: 200px;
+  width: 300px;
+  margin: 250px, 0px, 0px, 10px;
+}
+
+.fa {
+    font-size: 30px;
+}
+
+.articleTitle{
+  font-size: 25px;
+}
+article p {
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+.infoRow {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   justify-content: space-around;;
+}
+
+footer {
+    position:fixed;
+    height:50px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+    text-align: center;
+}
