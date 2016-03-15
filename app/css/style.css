@@ -180,9 +180,10 @@ margin-bottom: 0;
 }
 
 #area {
-  margin-top: 25px;
+  font-size: 16px;
+  margin-top: 0px;
   float: left;
-  height: 590px;
+  height: 100px;
   width: 400px;
 }
 
@@ -206,11 +207,20 @@ option {
   font-weight: lighter;
 }
 
-.menuTitle{
+.menuTitle {
   color: black;
   font-style: italic;
   font-size: 16px;
   font-weight: bolder;
   float: left;
   width: 100%;
+}
+
+
+#ordersPlaced{
+  margin-top: 50px;
+  height: 500px;
+  width: 405px;
+  top: 13.85%;
+  border: none;
 }
