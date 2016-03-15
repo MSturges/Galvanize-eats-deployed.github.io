@@ -4,7 +4,7 @@ var menuGetter = $.ajax({
   dataType: "json"
 });
 
-var oPoster = $.ajax({
+var orderPoster = $.ajax({
   url: "https://galvanize-eats-api.herokuapp.com/orders",
   method: "POST"
 });
@@ -34,45 +34,43 @@ menuGetter.done(function(response){
 
 function appendPizza(pizzaArray, pizzaArrayPrice){
   var i = 0;
-  $("#fSelL").append("<option class='menuTitle op' disabled>Pizza</option>")
+  $("#saleTotal").append("<option class='menuTitle op' disabled>Pizza</option>")
   $.each(pizzaArray, function(i, item){
     if(i===0){
-      $("#fSelL").append("<option name='pizzaArray[i]' class='op' value="+pizzaArrayPrice[i]+" selected>"+pizzaArray[i]+"<option disabled name='pizzaArrayPrice[i]' class='menuPrice' value="+pizzaArrayPrice[i]+">$"+pizzaArrayPrice[i]+"</option>"+"</option>");
+      $("#saleTotal").append("<option name='pizzaArray[i]' class='op' value="+pizzaArrayPrice[i]+" selected>"+pizzaArray[i]+"<option disabled name='pizzaArrayPrice[i]' class='menuPrice' value="+pizzaArrayPrice[i]+">$"+pizzaArrayPrice[i]+"</option>"+"</option>");
     }else{
-      $("#fSelL").append("<option name='pizzaArray[i]' class='op' value="+pizzaArrayPrice[i]+">"+pizzaArray[i]+"<option disabled name='pizzaArrayPrice[i]' class='menuPrice' value="+pizzaArrayPrice[i]+">$"+pizzaArrayPrice[i]+"</option>"+"</option>")
+      $("#saleTotal").append("<option name='pizzaArray[i]' class='op' value="+pizzaArrayPrice[i]+">"+pizzaArray[i]+"<option disabled name='pizzaArrayPrice[i]' class='menuPrice' value="+pizzaArrayPrice[i]+">$"+pizzaArrayPrice[i]+"</option>"+"</option>")
     }
   })
 };
 
 function appendBurgers(burgerArr, burgerArrPrice){
   var i = 0;
-  $("#fSelL").append("<option class='menuTitle op' disabled>Burgers</option>")
+  $("#saleTotal").append("<option class='menuTitle op' disabled>Burgers</option>")
   burgerArr.forEach(function(){
-    $("#fSelL").append("<option name="+burgerArr[i]+" class='op' value="+burgerArrPrice[i]+">"+burgerArr[i]+"<option disabled name="+burgerArrPrice[i]+" class='menuPrice' value="+burgerArrPrice[i]+">$"+burgerArrPrice[i++]+"</option>"+"</option>")
-
+    $("#saleTotal").append("<option name="+burgerArr[i]+" class='op' value="+burgerArrPrice[i]+">"+burgerArr[i]+"<option disabled name="+burgerArrPrice[i]+" class='menuPrice' value="+burgerArrPrice[i]+">$"+burgerArrPrice[i++]+"</option>"+"</option>")
   })
 };
 
 //Math is Hard + more DOM Manipulation
-
 var sTotal = 0;
 $("#aitBtn").on('click',function(){
   var count = $("#quantity").val();
   if($("#quantity").val()>99 || $("#quantity").val()<1){
-    alert("Please enter positive quantity")
+    alert("Add Quantity")
   }else{
     while (count>0) {
-      $("#ordersPlaced").append("<option class='op'>"+$("#fSelL :selected").html()+"<option class='opP'>$"+$("#fSelL :selected").val()+"</option></option>")
-      sTotal += parseFloat($("#fSelL").val());
+      $("#ordersPlaced").append("<option class='op'>"+$("#saleTotal :selected").html()+"<option class='opP'>$"+$("#saleTotal :selected").val()+"</option></option>")
+      sTotal += parseFloat($("#saleTotal").val());
       count--
     }
   }
-  $("#area").html("Subtotal: $" + sTotal.toFixed(2)+"                  ")
+  $("#area").html("Subtotal: $" + sTotal.toFixed(2)+"               ")
   $("#area").append("Sales Tax: 3.81%                  ")
   $("#area").append("Total: $" + (sTotal+sTotal * .0381).toFixed(2));
 })
 $("#deliverIt").on('click', function(){
-  oPoster.done(function(response){
+  orderPoster.done(function(response){
     alert(response);
   })
 })

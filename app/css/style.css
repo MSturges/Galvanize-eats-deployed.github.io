@@ -113,7 +113,7 @@ footer {
   overflow-y: scroll;
 }*/
 
-#fSelL{
+#saleTotal{
   width: 400px;
   height: 200px;
   background-color: rgb(255, 255, 255);
@@ -215,7 +215,6 @@ option {
   float: left;
   width: 100%;
 }
-
 
 #ordersPlaced{
   margin-top: 50px;
