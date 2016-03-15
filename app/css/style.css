@@ -105,12 +105,21 @@ footer {
 
 }
 
-.menu {
+/*.menu {
   width: 400px;
   height: 200px;
   background-color: rgb(255, 255, 255);
   margin-bottom: 30px;
   overflow-y: scroll;
+}*/
+
+#fSelL{
+  width: 400px;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 30px;
+  overflow-y: scroll;
+
 }
 
 h5{
@@ -155,7 +164,7 @@ margin-top: 0;
 margin-bottom: 0;
 }
 
-#dIt{
+#deliverIt{
   background-color: rgb(111, 160, 114);
   height: 50px;
   width: 400px;
@@ -175,4 +184,33 @@ margin-bottom: 0;
   float: left;
   height: 590px;
   width: 400px;
+}
+
+.op{
+  float: left;
+  width: 70%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.menuPrice{
+  position: relative;
+  float: right;
+  font-size: 22px;
+  color: black;
+  text-align: right;
+}
+
+option {
+  font-size: 22px;
+  font-weight: lighter;
+}
+
+.menuTitle{
+  color: black;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: bolder;
+  float: left;
+  width: 100%;
 }
